@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
       database: env('DATABASE_NAME', 'strapitest'),
       user: env('DATABASE_USERNAME', 'postgres'),
       password: env('DATABASE_PASSWORD', 'cydoniasun'),
-      ssl: env.bool('DATABASE_SSL', false),
+      ssl: { rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false)},
     },
   },
 });
